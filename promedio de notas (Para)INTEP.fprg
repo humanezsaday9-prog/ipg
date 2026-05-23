@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="ciclomientrasnota"/>
+        <attribute name="authors" value="hp 15-fd0158la"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-05-20 02:00:22 p.&#8239;m."/>
+        <attribute name="created" value="aHAgMTUtZmQwMTU4bGE7SFAtMTUtRkQwMTU4TEE7MjAyNi0wNS0xNjswMzo1OTowOCBwLuKAr20uOzExNTIz"/>
+        <attribute name="edited" value="aHAgMTUtZmQwMTU4bGE7SFAtMTUtRkQwMTU4TEE7MjAyNi0wNS0xNjswMzo1OToxMSBwLuKAr20uOzE7aHAgMTUtZmQwMTU4bGE7SFAtMTUtRkQwMTU4TEE7MjAyNi0wNS0xMjswNDo1Mzo0NyBwLuKAr20uO3Byb21lZGlvZGVzYWxvbmVzLmZwcmc7MjU1NTg="/>
+        <attribute name="edited" value="aHAgMTUtZmQwMTU4bGE7SFAtMTUtRkQwMTU4TEE7MjAyNi0wNS0xNjswNDowNDo0MyBwLuKAr20uOzE7aHAgMTUtZmQwMTU4bGE7SFAtMTUtRkQwMTU4TEE7MjAyNi0wNS0xMjswNDo1Mzo0NyBwLuKAr20uO3Byb21lZGlvIGRlIHVuIHNhbG9uLmZwcmc7MjU2NjE="/>
+        <attribute name="edited" value="aHAgMTUtZmQwMTU4bGE7SFAtMTUtRkQwMTU4TEE7MjAyNi0wNS0yMDswMjowMDoyMiBwLuKAr20uOzU7MTE2MTE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="alumnos, i, j, salones, totalAlumnos" type="Integer" array="False" size=""/>
+            <declare name="promSalon, promGlobal, sumaNotasSalon, nota, sumaGlobal" type="Real" array="False" size=""/>
+            <assign variable="sumaGlobal" expression="0"/>
+            <assign variable="totalAlumnos" expression="0"/>
+            <output expression="&quot;ingrese numero de salones&quot;" newline="True"/>
+            <input variable="salones"/>
+            <for variable="i" start="1" end="salones" direction="inc" step="1">
+                <assign variable="sumaNotasSalon" expression="0"/>
+                <output expression="&quot;Ingrese  alumnos de este salon&quot;" newline="True"/>
+                <input variable="alumnos"/>
+                <for variable="j" start="1" end="alumnos" direction="inc" step="1">
+                    <output expression="&quot;ingrese nota del estudiante&quot;" newline="True"/>
+                    <input variable="nota"/>
+                    <assign variable="sumaNotasSalon" expression="sumaNotasSalon+nota"/>
+                    <assign variable="sumaGlobal" expression="sumaGlobal+nota"/>
+                    <assign variable="totalAlumnos" expression="totalAlumnos+1"/>
+                </for>
+                <assign variable="promSalon" expression="sumaNotasSalon/alumnos"/>
+                <output expression="&quot;promedio del salon es &quot;&amp;promSalon" newline="True"/>
+            </for>
+            <assign variable="promGlobal" expression="sumaGlobal/totalAlumnos"/>
+            <output expression="&quot;promedio global es &quot;&amp;promGlobal" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
